@@ -6,9 +6,9 @@ app = Flask(__name__)
 def ingest():
     try:
         data = request.json  # Assumes the incoming data is JSON
-        print(f"Received data: {data}")
+        print(f"{data}")
 
-        return jsonify(data), 200
+        return jsonify(data)
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
 
